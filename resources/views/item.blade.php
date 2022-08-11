@@ -40,9 +40,7 @@
                     </h1>
 
                     <div class="space-y-4 lg:text-lg leading-loose">
-                        <a href="/update-progress/{{ $item->slug }}">
-                                <progress id="progress" value="{{ $item->progress }}" max="100" style="width:100%;"> {{ $item->progress }}% </progress>
-                        </a>
+                        <x-progress-bar :item="$item" />
                     </div>
                 </div>
             </article>

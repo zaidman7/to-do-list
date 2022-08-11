@@ -24,9 +24,7 @@
                         </header>
 
                         <div class="text-sm mt-2">
-                            <a href="/update-progress/{{ $item->slug }}">
-                                    <progress id="progress" value="{{ $item->progress }}" max="100" style="width:100%;"> {{ $item->progress }}% </progress>
-                            </a>
+                            <x-progress-bar :item="$item" />
                         </div>
 
                         <footer class="flex justify-between items-center mt-8">
