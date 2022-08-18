@@ -6,6 +6,7 @@ use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Illuminate\Foundation\Bus\DispatchesJobs;
 use Illuminate\Foundation\Validation\ValidatesRequests;
 use Illuminate\Routing\Controller as BaseController;
+use Illuminate\Support\Facades\View;
 
 use App\Models\Item;
 
@@ -29,8 +30,6 @@ class Controller extends BaseController
         $item->deadline = $attributes['deadline'];
         $item->progress = 0;
         $item->save();
-
-        return redirect('/items/' . $item->slug);
     }
     
     public function deletePage(Item $item) {
@@ -63,7 +62,7 @@ class Controller extends BaseController
         $item->progress = $progress;
         $item->save();
 
-        return redirect('/items/' . $item->slug);
+        // return redirect('/items/' . $item->slug);
     }
 
     public function changeDeadlinePage(Item $item) {

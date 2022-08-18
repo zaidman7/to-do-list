@@ -29,7 +29,7 @@
                             Back to List
                         </a>
 
-                        <div class="space-x-2">
+                        <div id="buttons-{{ $item->slug }}" class="space-x-2">
                             <x-update-button :item="$item" />
                             <x-delete-button :item="$item" />
                         </div>
@@ -39,8 +39,12 @@
                         {{ $item->todo }}
                     </h1>
 
-                    <div class="space-y-4 lg:text-lg leading-loose">
+                    <div id="progress-bar-{{ $item->slug }}" class="text-sm mt-2">
                         <x-progress-bar :item="$item" />
+                    </div>
+                    
+                    <div id="update-progress-form-div-{{ $item->slug }}" style="display:none">
+                        <x-update-progress :item="$item" />
                     </div>
                 </div>
             </article>

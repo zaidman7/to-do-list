@@ -1,9 +1,13 @@
 <x-layout>
-    @include('_all-items-header')
+    <div id="header" class="max-w-lg mx-auto mt-10 p-6 rounded-xl">
+        @include('add-item-header')
+    </div>
 
     <main class="max-w-6xl mx-auto mt-6 lg:mt-20 space-y-6">
-        @if($items->count())
-            <x-items-grid :items="$items" />
-        @endif
+        <div id="items">
+            @if($items->count())
+                <x-items-grid :items="$items" />
+            @endif
+        </div>
     </main>
 </x-layout>
