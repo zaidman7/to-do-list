@@ -1,33 +1,5 @@
-<script>
-    $(document).ready(function() {
-        $("#add-item-form").submit(function(e) {
-            e.preventDefault();
-            var name = $("#name").val();
-            var deadline = $("#deadline").val();
-            var submit = $("#submit").val();
-
-            $.ajax({
-                url: '/add',
-                type: 'POST',
-                data: {
-                    _token: "{{ csrf_token() }}",
-                    name: name,
-                    deadline: deadline,
-                    submit: submit
-                },
-                success: function(data) {
-                    $('#items').load(' #items');
-                },
-                error: function(XMLHttpRequest, textStatus, errorThrown) {
-                    alert("responseText=" + XMLHttpRequest.responseText + "\n textStatus=" + textStatus + "\n errorThrown=" + errorThrown);
-                }
-            });
-        });
-    });
-</script>
-
 <h1 class="font-bold text-xl">Add an assignment</h1>
-<form id="add-item-form" action="/add" method="POST" class="mt-10">
+<form id="add-item-form" action="/add" method="POST" class="add-item-form mt-10">
     @csrf
 
     <div class="mb-6">
@@ -58,6 +30,7 @@
 
     <div class="mb-6">
         <button type="submit"
+            id="submit-add-item"
             class="bg-blue-400 text-white rounded py-2 px-4 hover:bg-blue-500"
         >
             Add

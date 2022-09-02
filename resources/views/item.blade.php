@@ -1,4 +1,5 @@
 <x-layout>
+    
     <section class="px-6 py-8">
         <main class="max-w-6xl mx-auto mt-10 lg:mt-20 space-y-6">
             <article class="max-w-4xl mx-auto lg:grid lg:grid-cols-12 gap-x-10">
@@ -39,12 +40,12 @@
                         {{ $item->todo }}
                     </h1>
 
-                    <div id="progress-bar-{{ $item->slug }}" class="text-sm mt-2">
+                    <div class="progress-bar"id="progress-bar-{{ $item->slug }}" class="text-sm mt-2">
                         <x-progress-bar :item="$item" />
                     </div>
                     
-                    <div id="update-progress-form-div-{{ $item->slug }}" style="display:none">
-                        <x-update-progress :item="$item" />
+                    <div class="update-progress-form-div" id="update-progress-form-div-{{ $item->slug }}" style="display:none">
+                        @include('update-progress', ['item' => $item])
                     </div>
                 </div>
             </article>
