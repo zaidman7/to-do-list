@@ -29,6 +29,10 @@
                 @include('update-progress', ['item' => $item, 'featured' => 1])
             </div>
 
+            <div class="delete-item-form-div" id="delete-item-form-div-{{ $item->slug }}" data-id="{{ $item->slug }}" style="display:none">
+                @include('delete', ['item' => $item, 'featured' => 1])
+            </div>
+
             <footer class="flex justify-between items-center mt-8">
                 <div class="flex items-center text-sm">
                     <img src="/images/lary-avatar.svg" alt="Lary avatar">

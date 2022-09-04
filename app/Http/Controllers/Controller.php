@@ -55,9 +55,10 @@ class Controller extends BaseController
         ]);
 
         $progress = $attributes['progress'];
-        if($progress == 100) {
-            return $this->delete($item);
-        }
+        // if($progress == 100) {
+        //     $this->delete($item);
+        //     return;
+        // }
 
         $item->progress = $progress;
         $item->save();

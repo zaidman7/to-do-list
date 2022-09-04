@@ -1,5 +1,4 @@
 <x-layout>
-    
     <section class="px-6 py-8">
         <main class="max-w-6xl mx-auto mt-10 lg:mt-20 space-y-6">
             <article class="max-w-4xl mx-auto lg:grid lg:grid-cols-12 gap-x-10">
@@ -31,8 +30,8 @@
                         </a>
 
                         <div id="buttons-{{ $item->slug }}" class="space-x-2">
-                            <x-update-button :item="$item" />
-                            <x-delete-button :item="$item" />
+                            <x-update-button :item="$item" :featured="2" />
+                            <x-delete-button :item="$item" :featured="2" />
                         </div>
                     </div>
 
@@ -40,12 +39,16 @@
                         {{ $item->todo }}
                     </h1>
 
-                    <div class="progress-bar"id="progress-bar-{{ $item->slug }}" class="text-sm mt-2">
-                        <x-progress-bar :item="$item" />
+                    <div class="progress-bar" id="progress-bar-div-{{ $item->slug }}" class="text-sm mt-2">
+                        <x-progress-bar :item="$item" :featured="2" />
                     </div>
                     
-                    <div class="update-progress-form-div" id="update-progress-form-div-{{ $item->slug }}" style="display:none">
-                        @include('update-progress', ['item' => $item])
+                    <div class="update-progress-form-div" id="update-progress-form-div-{{ $item->slug }}" data-id="{{ $item->slug }}" style="display:none">
+                        @include('update-progress', ['item' => $item, 'featured' => 2])
+                    </div>
+
+                    <div class="delete-item-form-div" id="delete-item-form-div-{{ $item->slug }}" data-id="{{ $item->slug }}" style="display:none">
+                        @include('delete', ['item' => $item, 'featured' => 2])
                     </div>
                 </div>
             </article>
