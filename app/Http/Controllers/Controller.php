@@ -55,15 +55,9 @@ class Controller extends BaseController
         ]);
 
         $progress = $attributes['progress'];
-        // if($progress == 100) {
-        //     $this->delete($item);
-        //     return;
-        // }
 
         $item->progress = $progress;
         $item->save();
-
-        // return redirect('/items/' . $item->slug);
     }
 
     public function changeDeadlinePage(Item $item) {

@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Models\Item;
 use App\Http\Controllers\Controller;
+use App\Http\Controllers\FileUpload;
 
 /*
 |--------------------------------------------------------------------------
@@ -38,3 +39,6 @@ Route::post('/change-deadline/{item}', [Controller::class, 'changeDeadline']);
 
 Route::get('/delete/{item}', [Controller::class, 'deletePage']);
 Route::post('/delete/{item}', [Controller::class, 'delete']);
+
+Route::get('/upload-file/{item}', [FileUpload::class, 'createForm']);
+Route::post('/upload-file/{item}', [FileUpload::class, 'fileUpload']);

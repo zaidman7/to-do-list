@@ -15,4 +15,8 @@ class Item extends Model
     {
         return 'slug';
     }
+
+    public function file() {
+        return $this->hasOne(File::class);
+    }
 }
