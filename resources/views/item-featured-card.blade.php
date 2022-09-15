@@ -27,7 +27,7 @@
                 </div>
             </header>
 
-            <div class="progress-bar" id="progress-bar-div-{{ $item->slug }}" class="text-sm mt-2">
+            <div class="progress-bar text-sm mt-2" id="progress-bar-div-{{ $item->slug }}">
                 <x-progress-bar :item="$item" :featured="1" />
             </div>
 

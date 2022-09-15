@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Models\Item;
 use App\Http\Controllers\Controller;
 use App\Http\Controllers\FileUpload;
+use App\Http\Controllers\ScraperController;
 
 /*
 |--------------------------------------------------------------------------
@@ -42,3 +43,9 @@ Route::post('/delete/{item}', [Controller::class, 'delete']);
 
 Route::get('/upload-file/{item}', [FileUpload::class, 'createForm']);
 Route::post('/upload-file/{item}', [FileUpload::class, 'fileUpload']);
+
+
+Route::get('scraper', [ScraperController::class, 'scraper']);
+
+Route::get('testpost', [ScraperController::class, 'returnView']);
+Route::post('testpost', [ScraperController::class, 'post']);
