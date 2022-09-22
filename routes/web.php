@@ -5,6 +5,7 @@ use App\Models\Item;
 use App\Http\Controllers\Controller;
 use App\Http\Controllers\FileUpload;
 use App\Http\Controllers\ScraperController;
+use App\Http\Controllers\PostController;
 
 /*
 |--------------------------------------------------------------------------
@@ -45,7 +46,7 @@ Route::get('/upload-file/{item}', [FileUpload::class, 'createForm']);
 Route::post('/upload-file/{item}', [FileUpload::class, 'fileUpload']);
 
 
-Route::get('scraper', [ScraperController::class, 'scraper']);
+Route::get('/scraper', [ScraperController::class, 'scraper']);
 
-Route::get('testpost', [ScraperController::class, 'returnView']);
-Route::post('testpost', [ScraperController::class, 'post']);
+Route::get('/testpost', [PostController::class, 'returnView']);
+Route::post('/testpost', [PostController::class, 'post']);
