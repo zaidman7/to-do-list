@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Models\Item;
 use App\Http\Controllers\Controller;
 use App\Http\Controllers\FileUpload;
+use App\Http\Controllers\JsonController;
 use App\Http\Controllers\ScraperController;
 use App\Http\Controllers\PostController;
 
@@ -50,3 +51,5 @@ Route::get('/scraper', [ScraperController::class, 'scraper']);
 
 Route::get('/testpost', [PostController::class, 'returnView']);
 Route::post('/testpost', [PostController::class, 'post']);
+
+Route::get('/json', [JsonController::class, 'index']);
